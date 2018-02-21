@@ -1,0 +1,98 @@
+body, html {
+    height: 100%;
+}
+
+#container {
+	position: relative;
+
+	/* The image used */
+    background-image: url("H1B-Visa.jpg");
+
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -15px;
+
+}
+
+#form {
+	column-count: 3;
+  column-gap: 10px;
+  column-span: all;
+  column-width: 100px;
+}
+
+input[type=text],input[type=number] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    background-color: lightyellow;
+}
+
+input[type=number]:focus {
+    background-color: lightyellow;
+}
+
+select {
+    width: 70%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+h1 {
+	color:red;
+	font-size:40px;
+	font-family:athelas;
+	text-align:center;
+}
+
+p {
+	font-size:18px;
+	font-family:avenir;
+}
+
+button.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f4511e;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  position: absolute;
+  top: 70%;
+  left: 45%;
+}
+
+button.button:hover {background-color: #3e8e41}
+
+button.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+ div.footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-top: 10px;
+    font-size:12px;
+	font-family:avenir;
+}

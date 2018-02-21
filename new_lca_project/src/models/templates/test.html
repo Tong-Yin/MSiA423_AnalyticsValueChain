@@ -1,0 +1,104 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+   		<title>LCA Case Status Prediction</title>
+   		<link rel="stylesheet" type="text/css" href="static/test.css">
+	</head>
+ 	<body> 
+ 		<h1>LCA Case Status Prediction</h1>
+    <hr>
+ 		<div id="container">
+        <p>
+          <b><i>A prospective H-1B employer can hire non-immigrant workers only after <abbr title="Labor Condition Application">LCA</abbr> is approved by <abbr title="Office of Foreign Labor Certification">OFLC</abbr>. 
+          <br>  
+          This website will help employers predict the LCA case status/petition result: Yes for Certified, No for Not Certified.</i></b>       
+        </p>	
+
+    		<form id = "form" action = '/' method = "POST">
+          Employer Name: <br>	
+    		  <input name="Employer Name" type="text">
+    		  <br>
+          H-1B Dependent: <br>  
+          <input type="radio" name="dependence" value="yes" checked> Yes<br>
+          <input type="radio" name="dependence" value="no"> No<br>
+          Visa Class: <br>
+          <select name="Visa Class">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C" selected>C</option>
+            <option value="D">D</option>
+          </select>
+          <br>
+          Employer State: <br>  
+          <select name="Employer State">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C" selected>C</option>
+            <option value="D">D</option>
+          </select>
+          <br>
+          Worksite State: <br>  
+          <select name="Worksite State">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+          <br>
+      		Sol Name: <br>	
+      		<select name="Sol Nmae">
+        		<option value="A">A</option>
+        		<option value="B">B</option>
+        		<option value="C">C</option>
+       			<option value="D">D</option>
+      		</select>
+      		<br>
+      		NAICS Code: <br>	
+      		<select name="NAICS Code">
+        		<option value="A">A</option>
+        		<option value="B">B</option>
+        		<option value="C">C</option>
+       			<option value="D">D</option>
+      		</select>
+      		<br>
+          Full Time Position: <br>  
+          <input type="radio" name="dependence" value="yes" checked> Yes<br>
+          <input type="radio" name="dependence" value="no"> No<br>
+      		<br>
+          Prevailing Wage: <br>
+          <input type="number" name="prevailing wage" min="1" max="10000000">
+          <br>
+          Wage Rate From: <br>
+          <input type="number" name="wage rate from" min="1" max="10000000">
+          <br>
+          Wage Rate To: <br>
+          <input type="number" name="wage rate to" min="1" max="10000000">
+          <br>
+          Wage Unit of Pay: <br>  
+          <select name="wage unit of pay">
+            <option value="H">Hour</option>
+            <option value="M">Month</option>
+            <option value="W">Week</option>
+            <option value="D">Day</option>
+          </select>
+          <br><br>
+
+
+          <input type="reset">
+        </form>
+ 		</div>
+
+    <button class="button" style="vertical-align:middle"><span>Submit for Prediction </span></button>
+    <!-- Write your comments here -->
+
+ 		<div class="footer">
+  			<h3>
+  				<a href="https://www.foreignlaborcert.doleta.gov/performancedata.cfm">
+ 				Click HERE for data source of the project</a>
+ 				<br>
+ 				<a href="https://www.mccormick.northwestern.edu/analytics/overview/meet-students/student-profiles/class-of-2018/yin-tong.html">
+ 				Click HERE to contact developer (Tong Yin) for more information</a>	
+  			</h3>
+		</div>
+ 	</body>
+</html>
