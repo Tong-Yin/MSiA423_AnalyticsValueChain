@@ -79,9 +79,7 @@ target/
 /data/
 
 config.py
-
-*.csv
-*/*.DS_Store
+.DS_Store
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
