@@ -77,3 +77,12 @@ target/
 
 # exclude data from source control by default
 /data/
+
+config.py
+
+*.csv
+*/*.DS_Store
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

@@ -18,19 +18,24 @@ body, html {
     background-size: cover;
 
     top: -15px;
+}
 
+p {
+	font-size:18px;
+	font-family:avenir;
 }
 
 #form {
-	column-count: 3;
-  column-gap: 10px;
-  column-span: all;
-  column-width: 100px;
+  margin: 5px 0px;
+    column-count: 4;
+    column-gap: 10px;
+    column-span: all;
+    column-width: 100px;
 }
 
 input[type=text],input[type=number] {
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 0px;
     box-sizing: border-box;
 }
 
@@ -50,16 +55,11 @@ select {
     background-color: #ffffff;
 }
 
-h1 {
-	color:red;
+h1.title {
+	color:#f41e1e;
 	font-size:40px;
 	font-family:athelas;
 	text-align:center;
-}
-
-p {
-	font-size:18px;
-	font-family:avenir;
 }
 
 button.button {
@@ -76,8 +76,8 @@ button.button {
   border-radius: 15px;
   box-shadow: 0 9px #999;
   position: absolute;
-  top: 70%;
-  left: 45%;
+  top: 85%;
+  left: 40%;
 }
 
 button.button:hover {background-color: #3e8e41}
@@ -86,6 +86,13 @@ button.button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+h1.result {
+    color:#f41e1e;
+	font-size:28px;
+	font-family:athelas;
+	text-align:center;
 }
 
  div.footer {
