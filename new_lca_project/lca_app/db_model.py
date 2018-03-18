@@ -1,4 +1,4 @@
-from src.models import db
+from lca_app import db
 
 
 # Create a data model for the database to be setup for the app

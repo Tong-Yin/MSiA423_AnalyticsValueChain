@@ -1,0 +1,34 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+   		<title>LCA Case Status Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
+	</head>
+ 	<body> 
+ 		<h1 class="title">LCA Case Status Prediction</h1>
+    <hr>
+ 		<div id="container">
+        <p>
+          <b><i>A prospective H-1B employer can hire non-immigrant workers only after <abbr title="Labor Condition Application">LCA</abbr> is approved by <abbr title="Office of Foreign Labor Certification">OFLC</abbr>. 
+          <br>  
+          This website will help employers predict the LCA case status/petition result: Yes for Certified, No for Not Certified.</i></b>       
+        </p>
+            <h1 class="result">{{ result }}</h1>
+ 		</div>
+        <form id = "form" action = "{{ url_for('show') }}" method = "GET" >
+            <button class="button" style="vertical-align:middle" type="Submit"><span>Go Back</span></button>
+        </form>
+
+    <!-- Write your comments here -->
+
+ 		<div class="footer">
+  			<h3>
+  				<a href="https://www.foreignlaborcert.doleta.gov/performancedata.cfm">
+ 				Click HERE for data source of the project</a>
+ 				<br>
+ 				<a href="https://www.mccormick.northwestern.edu/analytics/overview/meet-students/student-profiles/class-of-2018/yin-tong.html">
+ 				Click HERE to contact developer (Tong Yin) for more information</a>	
+  			</h3>
+		</div>
+ 	</body>
+</html>

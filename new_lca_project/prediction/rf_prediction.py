@@ -1,13 +1,12 @@
 import pandas as pd
 import pickle
-from flask import url_for
 import os
 
 
 def predict(data):
     path = './clf.pkl'
     if not os.path.exists(path):
-        path = 'src/clf.pkl'
+        path = 'prediction/clf.pkl'
     fileObject = open(path, 'rb')
     clf = pickle.load(fileObject)
     fileObject.close()
