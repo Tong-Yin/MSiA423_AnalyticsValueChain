@@ -1,6 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
-from src.data import make_dataframe as mk
+from data import make_dataframe as mk
 import os
 import pickle
 

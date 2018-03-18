@@ -1,7 +1,7 @@
 from numpy.distutils.fcompiler import str2bool
 
-from src.models import db
-from src.models.db_model import LCA
+from lca_app import db
+from lca_app.db_model import LCA
 
 
 """Ingestion module
