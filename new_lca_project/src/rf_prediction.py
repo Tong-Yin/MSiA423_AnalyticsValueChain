@@ -1,10 +1,19 @@
 import pandas as pd
+import pickle
+from flask import url_for
+import os
 
-from src.models.generate_rf_model import clf
 
 def predict(data):
+    path = './clf.pkl'
+    if not os.path.exists(path):
+        path = 'src/clf.pkl'
+    fileObject = open(path, 'rb')
+    clf = pickle.load(fileObject)
+    fileObject.close()
     result = clf.predict(map_data_to_sample(data))
     return result[0]
+
 
 def map_data_to_sample(data):
     return pd.DataFrame(
