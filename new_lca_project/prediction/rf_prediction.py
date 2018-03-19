@@ -1,15 +1,22 @@
+import boto3
 import pandas as pd
-import pickle
-import os
+from io import BytesIO
+from sklearn.externals import joblib
+from config import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
+BUCKET_NAME = 'lca-model-bucket'
+MODEL_FILE_NAME = 'rf_model.pkl'
+MODEL_LOCAL_PATH = MODEL_FILE_NAME
+
+
+def load_rf_model():
+    client = boto3.client('s3', aws_access_key_id=ACCESS_KEY_ID, aws_secret_access_key=SECRET_ACCESS_KEY)
+    obj = client.get_object(Bucket=BUCKET_NAME, Key=MODEL_FILE_NAME)
+    clf = joblib.load(BytesIO(obj['Body'].read()))
+    return clf
 
 def predict(data):
-    path = './clf.pkl'
-    if not os.path.exists(path):
-        path = 'prediction/clf.pkl'
-    fileObject = open(path, 'rb')
-    clf = pickle.load(fileObject)
-    fileObject.close()
+    clf = load_rf_model()
     result = clf.predict(map_data_to_sample(data))
     return result[0]
 
