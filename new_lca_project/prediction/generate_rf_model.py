@@ -1,8 +1,7 @@
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.externals import joblib
 import numpy as np
 from data import make_dataframe as mk
-import os
-import pickle
 
 def generate_rf(df):
     # retrieve data frame from csv
@@ -58,11 +57,9 @@ def generate_rf(df):
 
     return clf
 
+
 if __name__ == "__main__":
-    path = os.path.realpath('../../data/H-1B_Data_FY17.csv')
-    df = mk.make_data_frame(path)
+    df = mk.make_data_frame('H-1B_Data_FY17.csv')
     clf = generate_rf(df)
-    fileObject = open('clf.pkl', 'wb')
-    pickle.dump(clf, fileObject)
-    fileObject.close()
+    joblib.dump(clf, open('rf_model.pkl', 'wb'))
 

@@ -23,43 +23,23 @@ def submit():
     # example to get user input
     data = request.form
     result = rf.predict(data)
-    if result == 0:
-        prediction = "No"
-    else:
+    prediction = "No"
+    if result == 1:
         prediction = "Yes"
-    # prediction = "No" if (result == 0) else "Yes"
     # save user input to db
     ingest.seed_db_single_record(datetime.utcnow(), data, result)
     return render_template('result.html', result=prediction)
 
 
-@application.route('/', methods=['GET'])
+@application.route('/')
 def show():
 
     """View that process a POST with new user input
 
     :return: redirect to index page
     """
-
-    #return render_template('index.html', result=clf.predict(form1))
-
-    # if request.method == "POST":
-    #     # example to get user input
-    #     data = request.form
-    #     result = rf.predict(data)
-    #     if result == 0:
-    #         prediction = "No"
-    #     else:
-    #         prediction = "Yes"
-    #     # prediction = "No" if (result == 0) else "Yes"
-    #     # save user input to db
-    #     ingest.seed_db_single_record(datetime.utcnow(), data, result)
-    #     return render_template('index.html', result=prediction)
-
     return render_template('index.html')
 
 
 if __name__ == "__main__":
     application.run()
-    #application.run(host='0.0.0.0', debug=True)
-
