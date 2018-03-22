@@ -2,6 +2,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
 import numpy as np
 from data import make_dataframe as mk
+import boto3
+from io import BytesIO
+from config import ACCESS_KEY_ID, SECRET_ACCESS_KEY
+
 
 def generate_rf(df):
     # retrieve data frame from csv
@@ -58,8 +62,18 @@ def generate_rf(df):
     return clf
 
 
+BUCKET_NAME = 'lca-model-bucket'
+MODEL_FILE_NAME = 'rf_model.pkl'
+
+
+def load_rf_model():
+    client = boto3.client('s3', aws_access_key_id=ACCESS_KEY_ID, aws_secret_access_key=SECRET_ACCESS_KEY)
+    obj = client.get_object(Bucket=BUCKET_NAME, Key=MODEL_FILE_NAME)
+    clf = joblib.load(BytesIO(obj['Body'].read()))
+    return clf
+
+
 if __name__ == "__main__":
     df = mk.make_data_frame('H-1B_Data_FY17.csv')
     clf = generate_rf(df)
     joblib.dump(clf, open('rf_model.pkl', 'wb'))
-
