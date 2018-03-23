@@ -36,7 +36,7 @@ you can refer to [this tuturial](https://medium.com/@rodkey/deploying-a-flask-ap
 
 If using Anaconda, create conda environment by:
 
-    `conda env create -f lca_env.yml`
+`conda env create -f lca_env.yml`
 
 If using Python virtualenv (suggested version `Python 3.5`), create Python virtualenv and install required packages by:
 
@@ -45,9 +45,13 @@ If using Python virtualenv (suggested version `Python 3.5`), create Python virtu
 3. In the same directory as `requirements.txt`, create a configuration file called `config.py` to configure your RDS connection.
 
 `SECRET_KEY = 'secret_key'`
+
 `SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://<db_user>:<db_password>@<endpoint>/<db_url>'`
+
 `SQLALCHEMY_TRACK_MODIFICATIONS = True`
+
 `ACCESS_KEY_ID = 'your_access_key_id'`
+
 `SECRET_ACCESS_KEY = 'your_secret_access_key`
 
 4. To initialize a database on RDS, please run `create_initial_db.py` under `database` folder.
@@ -55,11 +59,15 @@ If using Python virtualenv (suggested version `Python 3.5`), create Python virtu
 5. Now run `application.py`. The app should be running on your local environment. Any info you enter will be saved to your RDS database.
 
 6. To deploy the app using Elastic Beanstalk, please run the following commands and follow Elastic Beanstalk prompts:
+
 `pip install eb`
+
 `eb init`
+
 `eb create`
 
 7. To update deployed app, run the following command: 
+
 `eb deploy` 
 
 ## Logging
