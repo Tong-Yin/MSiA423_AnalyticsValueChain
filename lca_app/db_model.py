@@ -1,7 +1,10 @@
 from lca_app import db
 
+"""
+This module creates the LCA data model for the database to be setup for the app.
+"""
 
-# Create a data model for the database to be setup for the app
+
 class LCA(db.Model):
     id = db.Column(db.String(100), primary_key=True)
     employer_name = db.Column(db.String(100), unique=False, nullable=False)

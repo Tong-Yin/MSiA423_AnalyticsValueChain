@@ -2,12 +2,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
 import numpy as np
 from data import make_dataframe as mk
-import boto3
-from io import BytesIO
-from config import ACCESS_KEY_ID, SECRET_ACCESS_KEY
 
 
 def generate_rf(df):
+    
     # retrieve data frame from csv
 
     # extract predictors
@@ -59,17 +57,6 @@ def generate_rf(df):
     # view a list of the features and their importance scores
     # list(zip(train_features, clf.feature_importances_))
 
-    return clf
-
-
-BUCKET_NAME = 'lca-model-bucket'
-MODEL_FILE_NAME = 'rf_model.pkl'
-
-
-def load_rf_model():
-    client = boto3.client('s3', aws_access_key_id=ACCESS_KEY_ID, aws_secret_access_key=SECRET_ACCESS_KEY)
-    obj = client.get_object(Bucket=BUCKET_NAME, Key=MODEL_FILE_NAME)
-    clf = joblib.load(BytesIO(obj['Body'].read()))
     return clf
 
 
