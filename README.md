@@ -40,7 +40,7 @@ If using Anaconda, create conda environment by:
 
 If using Python virtualenv (suggested version `Python 3.5`), create Python virtualenv and install required packages by:
 
-    `pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
 3. In the same directory as `requirements.txt`, create a configuration file called `config.py` to configure your RDS connection.
 
