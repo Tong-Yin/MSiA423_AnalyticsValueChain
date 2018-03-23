@@ -1,7 +1,5 @@
 """
-
 This module generates a trained random forest classifier and saves it in a pickle file.
-
 """
 
 from sklearn.ensemble import RandomForestClassifier

@@ -1,7 +1,5 @@
 """
-
 This module creates the LCA data model for the database to be setup for the app.
-
 """
 
 from lca_app import db
