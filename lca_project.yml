@@ -1,0 +1,117 @@
+name: lca_project
+channels:
+- conda-forge
+- defaults
+dependencies:
+- asn1crypto=0.24.0=py35_0
+- boto3=1.6.10=py_0
+- botocore=1.9.11=py_0
+- bunch=1.0.1=py35_0
+- cffi=1.11.5=py35_0
+- chardet=3.0.4=py35_0
+- cryptography=2.1.4=py35_0
+- docutils=0.14=py35_0
+- flask-sqlalchemy=2.3.2=py_0
+- idna=2.6=py35_1
+- jmespath=0.9.3=py35_0
+- pycparser=2.18=py35_0
+- pyopenssl=17.5.0=py35_0
+- pysocks=1.6.8=py35_1
+- python-dateutil=2.6.1=py35_0
+- requests=2.18.4=py35_1
+- s3transfer=0.1.13=py35_0
+- six=1.11.0=py35_1
+- sqlalchemy=1.2.1=py35_0
+- urllib3=1.22=py35_0
+- boto=2.48.0=py35h10f7326_1
+- ca-certificates=2017.08.26=ha1e5d58_0
+- certifi=2018.1.18=py35_0
+- click=6.7=py35hcc65ea6_0
+- flask=0.12.2=py35h7284a24_0
+- itsdangerous=0.24=py35hfbd69cd_1
+- jinja2=2.10=py35h6ff70ae_0
+- libcxx=4.0.1=h579ed51_0
+- libcxxabi=4.0.1=hebd6815_0
+- libedit=3.1=hb4e282d_0
+- libffi=3.2.1=h475c297_4
+- markupsafe=1.0=py35h9ba0a7f_1
+- ncurses=6.0=hd04f020_2
+- openssl=1.0.2n=hdbc3d79_0
+- pip=9.0.1=py35h33ce766_4
+- python=3.5.4=he720263_23
+- readline=7.0=hc1231fa_4
+- setuptools=38.4.0=py35_0
+- sqlite=3.22.0=h3efe00b_0
+- tk=8.6.7=h35a86e2_3
+- werkzeug=0.14.1=py35_0
+- wheel=0.30.0=py35h5c0b906_1
+- xz=5.2.3=h0278029_2
+- zlib=1.2.11=hf3cbc9b_2
+- pip:
+  - appnope==0.1.0
+  - awsebcli==3.12.4
+  - bcrypt==3.1.4
+  - bleach==2.1.2
+  - blessed==1.14.2
+  - cement==2.8.2
+  - colorama==0.3.7
+  - cycler==0.10.0
+  - decorator==4.2.1
+  - dockerpty==0.4.1
+  - docopt==0.6.2
+  - entrypoints==0.2.3
+  - fabric==1.14.0
+  - html5lib==1.0.1
+  - ipykernel==4.8.1
+  - ipython==6.2.1
+  - ipython-genutils==0.2.0
+  - ipywidgets==7.1.1
+  - jedi==0.11.1
+  - jsonschema==2.6.0
+  - jupyter==1.0.0
+  - jupyter-client==5.2.2
+  - jupyter-console==5.2.0
+  - jupyter-core==4.4.0
+  - matplotlib==2.1.2
+  - mistune==0.8.3
+  - nbconvert==5.3.1
+  - nbformat==4.4.0
+  - notebook==5.4.0
+  - numpy==1.14.0
+  - pandas==0.22.0
+  - pandocfilters==1.4.2
+  - paramiko==2.4.1
+  - parso==0.1.1
+  - pathspec==0.5.5
+  - pexpect==4.3.1
+  - pickleshare==0.7.4
+  - prettytable==0.7.2
+  - prompt-toolkit==1.0.15
+  - ptyprocess==0.5.2
+  - pyasn1==0.4.2
+  - pygments==2.2.0
+  - pymysql==0.8.0
+  - pynacl==1.2.1
+  - pyparsing==2.2.0
+  - pytz==2018.3
+  - pyyaml==3.12
+  - pyzmq==16.0.4
+  - qtconsole==4.3.1
+  - scikit-learn==0.19.1
+  - scipy==1.0.0
+  - semantic-version==2.5.0
+  - send2trash==1.4.2
+  - simplegeneric==0.8.1
+  - sklearn==0.0
+  - tabulate==0.7.5
+  - termcolor==1.1.0
+  - terminado==0.8.1
+  - testpath==0.3.1
+  - tornado==4.5.3
+  - traitlets==4.3.2
+  - wcwidth==0.1.7
+  - webencodings==0.5.1
+  - websocket-client==0.47.0
+  - widgetsnbextension==3.1.3
+prefix: /anaconda3/envs/lca_project
+

@@ -1,0 +1,104 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+   		<title>LCA Case Status Prediction</title>
+   		<link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
+	</head>
+ 	<body> 
+ 		<h1 class="title">LCA Case Status Prediction</h1>
+    <hr>
+ 		<div id="container">
+        <p>
+          <b><i>A prospective H-1B employer can hire non-immigrant workers only after <abbr title="Labor Condition Application">LCA</abbr> is approved by <abbr title="Office of Foreign Labor Certification">OFLC</abbr>. 
+          <br>  
+          This website will help employers predict the LCA case status/petition result: Yes for Certified, No for Not Certified.</i></b>       
+        </p>	
+
+    		<form id = "form" action = "{{ url_for('submit') }}" method = "POST" >
+                Employer Name: <br>
+                <input name="employer_name" type="text">
+                <br><br>
+                Employer State (2 letters max): <br>
+                <input name="employer_state" type = "text">
+                <br><br>
+                Worksite State (2 letters max): <br>
+                <input name="worksite_state" type = "text">
+                <br><br>
+                Total Number of Foreign Workers Requested: <br>
+                <input type="number" name="total_workers" min="1" max="200">
+                <br><br>
+                <br><br>
+                New Employment: <br>
+                <input type="radio" name="new_employment" value=1 checked> Yes<br>
+                <input type="radio" name="new_employment" value=0> No<br>
+                <br>
+                Continued Employment: <br>
+                <input type="radio" name="continued_employment" value=1 checked> Yes<br>
+                <input type="radio" name="continued_employment" value=0> No<br>
+                <br>
+                Change Previous Employment: <br>
+                <input type="radio" name="change_previous_employment" value=1 checked> Yes<br>
+                <input type="radio" name="change_previous_employment" value=0> No<br>
+                <br>
+                New Concurrent Employment: <br>
+                <input type="radio" name="new_concurrent_employment" value=1 checked> Yes<br>
+                <input type="radio" name="new_concurrent_employment" value=0> No<br>
+                <br>
+                Change Employer: <br>
+                <input type="radio" name="change_employer" value=1 checked> Yes<br>
+                <input type="radio" name="change_employer" value=0> No<br>
+                <br><br>
+                Amended Petition: <br>
+                <input type="radio" name="amended_petition" value=1 checked> Yes<br>
+                <input type="radio" name="amended_petition" value=0> No<br>
+                <br><br>
+                Prevailing Wage for the Job Requested: <br>
+                <input type="number" name="prevailing_wage" min="1" max="10000000">
+                <br><br>
+                Employer’s Proposed Wage Rate: <br>
+                <input type="number" name="wage_rate_of_pay_from" min="1" max="10000000">
+                <br><br>
+                Maximum proposed wage rate: <br>
+                <input type="number" name="wage_rate_of_pay_to" min="1" max="10000000">
+                <br><br>
+                Wage Unit of Pay: <br>
+                <select name="wage_unit_of_pay">
+                    <option value=1>Hour</option>
+                    <option value=3>Week</option>
+                    <option value=0>Bi-Weekly</option>
+                    <option value=2>Month</option>
+                    <option value=4>Year</option>
+                </select>
+                <br><br>
+                Full Time Position: <br>
+                <input type="radio" name="full_time_position_code" value=1 checked> Yes<br>
+                <input type="radio" name="full_time_position_code" value=0> No<br>
+                <br><br>
+                H-1B Dependent: <br>
+                <input type="radio" name="h1b_dependent_code" value=1 checked>Yes<br>
+                <input type="radio" name="h1b_dependent_code" value=0>No<br>
+                <br><br>
+                Willful Violator: <br>
+                <input type="radio" name="willful_violator_code" value=1 checked>Yes<br>
+                <input type="radio" name="willful_violator_code" value=0>No<br>
+                <br><br>
+                <br><br>
+                <input type="reset">
+                <button class="button" style="vertical-align:middle" type="Submit"><span>Submit for Prediction </span></button>
+            </form>
+ 		</div>
+
+
+    <!-- Write your comments here -->
+
+ 		<div class="footer">
+  			<h3>
+  				<a href="https://www.foreignlaborcert.doleta.gov/performancedata.cfm">
+ 				Click HERE for data source of the project</a>
+ 				<br>
+ 				<a href="https://www.mccormick.northwestern.edu/analytics/overview/meet-students/student-profiles/class-of-2018/yin-tong.html">
+ 				Click HERE to contact developer (Tong Yin) for more information</a>	
+  			</h3>
+		</div>
+ 	</body>
+</html>
