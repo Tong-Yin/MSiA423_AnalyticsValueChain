@@ -36,7 +36,7 @@ you can refer to [this tuturial](https://medium.com/@rodkey/deploying-a-flask-ap
 
 If using Anaconda, create conda environment by:
 
-`conda env create -f lca_env.yml`
+`conda env create -f lca_project.yml`
 
 If using Python virtualenv (suggested version `Python 3.5`), create Python virtualenv and install required packages by:
 
@@ -67,5 +67,6 @@ If using Python virtualenv (suggested version `Python 3.5`), create Python virtu
 `eb deploy` 
 
 ## Unit Test
-Please find details regarding unit tests in the following scripts for corresponding functions:
+Unit tests were added for Please find details regarding unit tests in the following scripts for corresponding functions:
+
 
