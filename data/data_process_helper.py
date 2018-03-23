@@ -12,6 +12,7 @@ def drop_false_predictor(df):
     which are are unnecessary attributes in predicting the Case_Status.
     This is because attributes with unique values such as ID can build a model
     that would be based on that attribute with unique value and predict with maximum accuracy.
+
     Args:
         df (pandas.DataFrame object): data frame that holds all data
 
@@ -56,7 +57,8 @@ def drop_sparse_predictors(df):
         df (pandas.DataFrame object): data frame with false and repetitive predictors removed
 
     Returns:
-        df (pandas.DataFrame object): data frame with predictors containing more than 50% missing values further removed
+        df (pandas.DataFrame object): data frame with predictors containing
+        more than 50% missing values further removed
     """
     df = df.drop(columns=['AGENT_ATTORNEY_CITY', 'AGENT_ATTORNEY_STATE', 'ORIGINAL_CERT_DATE',
                       'EMPLOYER_BUSINESS_DBA', 'SUPPORT_H1B',
@@ -109,7 +111,8 @@ def convert_types(df):
 
     # the following attributes have values equal to or larger than 0
     # most equal to 0 or 1 while a small portion larger than 1
-    # treat those data points larger than 0 as 1 and those equal to 0 as 0 to simplify prediction and remove outliers
+    # treat those data points larger than 0 as 1 and those equal to 0 as 0
+    # to simplify prediction and remove outliers
     # may be better without these; have to train model first and retrain?
     list_bool = ['NEW_EMPLOYMENT','CONTINUED_EMPLOYMENT','CHANGE_PREVIOUS_EMPLOYMENT',
                  'NEW_CONCURRENT_EMPLOYMENT','CHANGE_EMPLOYER','AMENDED_PETITION']
@@ -123,8 +126,9 @@ def impute_missing_cat(df):
     """
     Function that imputes missing values.
 
-    This function imputes certain categorical attributes with missing values using the most common type method.
-    After imputation, the function also removes the very small portion of observations with missing values.
+    This function imputes certain categorical attributes with missing values
+    using the most common type method. After imputation, the function also removes
+    the very small portion of observations with missing values.
 
     Args:
         df (pandas.DataFrame object): data frame before imputation of missing values
@@ -176,8 +180,6 @@ def additional_processing(df):
 
     df = df[df.VISA_CLASS == 'H-1B']
     df = df.drop(columns=['VISA_CLASS'])
-    #df['SOC_NAME'] = pd.factorize(df['SOC_NAME'])[0]
-    #df['PW_SOURCE'] = pd.factorize(df['PW_SOURCE'])[0]
 
     list_cat = ['WAGE_UNIT_OF_PAY', 'PW_SOURCE', 'SOC_NAME',
                 'EMPLOYER_STATE', 'WORKSITE_STATE', 'AGENT_REPRESENTING_EMPLOYER']
@@ -193,8 +195,8 @@ def balance_class(df):
     Function that balances CASE_STATUS_CODE.
 
     The response variable CASE_STATUS_CODE is imbalanced with TRUE:FALSE roughly equal to 7:1.
-    This function down-samples the majority class by randomly removing observations from the majority class
-    to prevent its signal from dominating the learning algorithm.
+    This function down-samples the majority class by randomly removing observations
+    from the majority class to prevent its signal from dominating the learning algorithm.
 
     Args:
         df (pandas.DataFrame object): data frame
@@ -204,7 +206,8 @@ def balance_class(df):
 
     """
     # separate observations from each class into different DataFrames
-    # resample the majority class without replacement, setting the number of samples to match that of the minority class
+    # resample the majority class without replacement,
+    # setting the number of samples to match that of the minority class
     # combine the down-sampled majority class DataFrame with the original minority class DataFrame.
 
     # Separate majority and minority classes
@@ -221,5 +224,3 @@ def balance_class(df):
     df_downsampled = pd.concat([df_majority_downsampled, df_minority])
 
     return df_downsampled
-
-

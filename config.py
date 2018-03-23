@@ -1,1 +1,1 @@
-SECRET_KEY = 'tongyin_key'SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flask:Emily_666@flasktest.cpkem1qato8j.us-east-2.rds.amazonaws.com:3306/flaskdb'SQLALCHEMY_TRACK_MODIFICATIONS = TrueACCESS_KEY_ID = 'AKIAJF262OTPYCKPK2XQ'SECRET_ACCESS_KEY = 'yQZrDHcIyvmhN3AQSw7GTl04f+2sy/zEo9DN+7j3'
+SECRET_KEY = 'tongyin_key'SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flask:Emily_666@flasktest.cpkem1qato8j.us-east-2.rds.amazonaws.com:3306/flaskdb'SQLALCHEMY_TRACK_MODIFICATIONS = True
