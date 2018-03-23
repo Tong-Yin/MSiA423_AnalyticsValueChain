@@ -1,3 +1,9 @@
+"""
+
+This module generates a trained random forest classifier and saves it in a pickle file.
+
+"""
+
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
 import numpy as np
@@ -5,7 +11,15 @@ from data import make_dataframe as mk
 
 
 def generate_rf(df):
-    
+    """
+    Function that generates a trained random forest classifier
+
+    Args:
+        df (pandas.DataFrame object): data frame that contains cleaned data
+
+    Returns:
+        clf (Random Forest Classifier): random forest object
+    """
     # retrieve data frame from csv
 
     # extract predictors
@@ -40,8 +54,7 @@ def generate_rf(df):
     # generate target variables
     target = df['CASE_STATUS_CODE']
 
-    # create a random forest Classifier
-    # train the Classifier to take the training features and learn how they relate to the training y (the case status)
+    # train a random forest Classifier
     clf = RandomForestClassifier(n_estimators=5, random_state=0)
     clf.fit(predictors, target)
 

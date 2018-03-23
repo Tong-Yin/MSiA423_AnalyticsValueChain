@@ -3,18 +3,29 @@ from sklearn.externals import joblib
 
 
 def load_rf_model():
+    """
+        Function that reloads random forest object from pickle file.
+
+        Args:
+
+        Returns:
+            clf (Random Forest Classifier): random forest object
+        """
     clf = joblib.load('prediction/rf_model.pkl')
     return clf
 
 
-def predict(data):
-    clf = load_rf_model()
-    result = clf.predict(map_data_to_sample(data))
-    return result[0]
-
-
 def map_data_to_sample(data):
-    return pd.DataFrame(
+    """
+        Function that maps user input data to pandas data frame.
+
+        Args:
+            data (dictionary): dictionary that contains user input for different attributes
+
+        Returns:
+            df (pandas.DataFrame object): data frame that holds test data
+        """
+    df = pd.DataFrame(
         [{
             'TOTAL_WORKERS': data['total_workers'],
             'NEW_EMPLOYMENT': data['new_employment'],
@@ -33,3 +44,21 @@ def map_data_to_sample(data):
            }
         ]
     )
+    return df
+
+
+def predict(data):
+    """
+        Function that returns predicted result given new test data.
+
+        Args:
+            data (dictionary): new test data
+
+        Returns:
+            result (integer): a binary response (0 or 1)
+        """
+    clf = load_rf_model()
+    result = clf.predict(map_data_to_sample(data))
+    result = result[0]  # get only the desired binary response
+    return result
+
