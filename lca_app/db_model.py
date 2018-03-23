@@ -1,8 +1,10 @@
-from lca_app import db
+"""
+
+This module creates the LCA data model for the database to be setup for the app.
 
 """
-This module creates the LCA data model for the database to be setup for the app.
-"""
+
+from lca_app import db
 
 
 class LCA(db.Model):
