@@ -15,7 +15,7 @@ This repo can be used to reproduce a Labor Condition Application (LCA) case stat
 * Success Criteria: A web app that returns Yes for Certified and No for Denied after user inputs a set of attributes.
 
 ## Data
-Raw data can be accessed through https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Disclosure_Data_FY17.xlsx. Helper functions to do EDA and data cleaning can be found at `data/data_process_helper.py`. You need to run the script at `data/make_dataframe.py` to generate a cleaned data frame.
+Raw data can be accessed through https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Disclosure_Data_FY17.xlsx. Helper functions to do EDA and data cleaning can be found at `data/data_process_helper.py`. You can use the script at `data/make_dataframe.py` to generate a cleaned data frame from the raw data.
 
 ## Pivotal Tracker
 [Link to Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2143075)
@@ -50,11 +50,7 @@ If using Python virtualenv (suggested version `Python 3.5`), create Python virtu
 
 `SQLALCHEMY_TRACK_MODIFICATIONS = True`
 
-`ACCESS_KEY_ID = 'your_access_key_id'`
-
-`SECRET_ACCESS_KEY = 'your_secret_access_key`
-
-4. To initialize a database on RDS, please run `create_initial_db.py` under `database` folder.
+4. To initialize a database on your RDS, please run `create_initial_db.py` under `database` folder.
 
 5. Now run `application.py`. The app should be running on your local environment. Any info you enter will be saved to your RDS database.
 
