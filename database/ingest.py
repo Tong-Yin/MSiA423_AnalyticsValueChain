@@ -1,17 +1,17 @@
-from numpy.distutils.fcompiler import str2bool
-
-from lca_app import db
-from lca_app.db_model import LCA
-
-
 """Ingestion module
 
 This module is meant to be called to ingest data and place it into db. Once an API is used
 the module can be extended with a function that calls the API and puts the data into the db.
 
-Functionality presumes that the db has already been created. 
+Functionality presumes that the db has already been created.
 
 """
+
+from numpy.distutils.fcompiler import str2bool
+
+from lca_app import db
+from lca_app.db_model import LCA
+
 
 def seed_db_single_record(primary_key, record, result):
 

@@ -36,7 +36,7 @@ you can refer to [this tuturial](https://medium.com/@rodkey/deploying-a-flask-ap
 
 If using Anaconda, create conda environment by:
 
-`conda env create -f lca_env.yml`
+`conda env create -f lca_project.yml`
 
 If using Python virtualenv (suggested version `Python 3.5`), create Python virtualenv and install required packages by:
 
@@ -50,9 +50,9 @@ If using Python virtualenv (suggested version `Python 3.5`), create Python virtu
 
 `SQLALCHEMY_TRACK_MODIFICATIONS = True`
 
-4. To initialize a database on your RDS, please run `create_initial_db.py` under `database` folder.
+4. To initialize a database on your RDS, please run `create_initial_db.py` under `database` folder. A log file will be generated and saved as `create_db.log` to log your activities with the database.
 
-5. Now run `application.py`. The app should be running on your local environment. Any info you enter will be saved to your RDS database.
+5. Now run `application.py`. The app should be running on your local environment. Any info you enter will be saved to your RDS database. A log file named `application.log` will be generated to log your activities with flask app.
 
 6. To deploy the app using Elastic Beanstalk, please run the following commands and follow Elastic Beanstalk prompts:
 
@@ -66,7 +66,8 @@ If using Python virtualenv (suggested version `Python 3.5`), create Python virtu
 
 `eb deploy` 
 
-## Logging
+## Unit Test
+Unit tests were added for Please find details regarding unit tests in the following scripts for corresponding functions:
+`data_process_helper_unit_test.py`
 
 
-## Unit Testing

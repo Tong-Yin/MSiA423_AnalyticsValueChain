@@ -1,10 +1,10 @@
-from lca_app import db
-import logging
-
 """
 This module creates LCA prediction database and table using defined db in SQLAlchemy.
 Configuration parameter in __init__.py with the schema defined by lca_app.db_model.LCA
 """
+
+from lca_app import db
+import logging
 
 
 def create_db():
@@ -17,9 +17,22 @@ def create_db():
 
     """
     db.drop_all()
+    logger.info('Cleared previous database records.')
+
     db.create_all()
-    db.session.commit()
+    logger.info('Database initialization successful.')
+
+    try:
+        db.session.commit()
+        logger.info('Database successfully committed.')
+    except :
+        logger.info('Database commit error.')
 
 
 if __name__ == "__main__":
+    # logger initialization
+    logging.basicConfig(filename="create_db.log",
+                        level=logging.INFO,
+                        format="%(asctime)s:%(levelname)s:%(message)s")
+    logger = logging.getLogger(__name__)
     create_db()

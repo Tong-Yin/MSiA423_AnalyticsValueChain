@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>prediction package &#8212; LCA_Project 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="lca_app package" href="lca_app.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="prediction-package">
+<h1>prediction package<a class="headerlink" href="#prediction-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-prediction.generate_rf_model">
+<span id="prediction-generate-rf-model-module"></span><h2>prediction.generate_rf_model module<a class="headerlink" href="#module-prediction.generate_rf_model" title="Permalink to this headline">¶</a></h2>
+<p>This module generates a trained random forest classifier and saves it in a pickle file.</p>
+<dl class="function">
+<dt id="prediction.generate_rf_model.generate_rf">
+<code class="descclassname">prediction.generate_rf_model.</code><code class="descname">generate_rf</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.generate_rf_model.generate_rf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that generates a trained random forest classifier</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame that contains cleaned data</dd>
+<dt>Returns:</dt>
+<dd>clf (Random Forest Classifier): random forest object</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-prediction.rf_prediction">
+<span id="prediction-rf-prediction-module"></span><h2>prediction.rf_prediction module<a class="headerlink" href="#module-prediction.rf_prediction" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="prediction.rf_prediction.load_rf_model">
+<code class="descclassname">prediction.rf_prediction.</code><code class="descname">load_rf_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prediction.rf_prediction.load_rf_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that reloads random forest object from pickle file.</p>
+<p>Args:</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>clf (Random Forest Classifier): random forest object</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="prediction.rf_prediction.map_data_to_sample">
+<code class="descclassname">prediction.rf_prediction.</code><code class="descname">map_data_to_sample</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.rf_prediction.map_data_to_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that maps user input data to pandas data frame.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>data (dictionary): dictionary that contains user input for different attributes</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame that holds test data</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="prediction.rf_prediction.predict">
+<code class="descclassname">prediction.rf_prediction.</code><code class="descname">predict</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.rf_prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns predicted result given new test data.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>data (dictionary): new test data</dd>
+<dt>Returns:</dt>
+<dd>result (integer): a binary response (0 or 1)</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-prediction">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-prediction" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LCA_Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">423Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="application.html">application module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lca_app.html">lca_app package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">prediction package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">423Project</a><ul>
+      <li>Previous: <a href="lca_app.html" title="previous chapter">lca_app package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Tong Yin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/prediction.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
