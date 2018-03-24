@@ -1,0 +1,149 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>database package &#8212; LCA_Project 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="lca_app package" href="lca_app.html" />
+    <link rel="prev" title="data package" href="data.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="database-package">
+<h1>database package<a class="headerlink" href="#database-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-database.create_initial_db">
+<span id="database-create-initial-db-module"></span><h2>database.create_initial_db module<a class="headerlink" href="#module-database.create_initial_db" title="Permalink to this headline">¶</a></h2>
+<p>This module creates LCA prediction database and table using defined db in SQLAlchemy.
+Configuration parameter in __init__.py with the schema defined by lca_app.db_model.LCA</p>
+<dl class="function">
+<dt id="database.create_initial_db.create_db">
+<code class="descclassname">database.create_initial_db.</code><code class="descname">create_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.create_initial_db.create_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that creates initial database</p>
+<p>Args:</p>
+<p>Returns:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-database.ingest">
+<span id="database-ingest-module"></span><h2>database.ingest module<a class="headerlink" href="#module-database.ingest" title="Permalink to this headline">¶</a></h2>
+<p>Ingestion module</p>
+<p>This module is meant to be called to ingest data and place it into db. Once an API is used
+the module can be extended with a function that calls the API and puts the data into the db.</p>
+<p>Functionality presumes that the db has already been created.</p>
+<dl class="function">
+<dt id="database.ingest.seed_db_single_record">
+<code class="descclassname">database.ingest.</code><code class="descname">seed_db_single_record</code><span class="sig-paren">(</span><em>primary_key</em>, <em>record</em>, <em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#database.ingest.seed_db_single_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seed a preexisting db with data</p>
+<p>Returns:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-database">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-database" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LCA_Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">423Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="application.html">application module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lca_app.html">lca_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prediction.html">prediction package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">423Project</a><ul>
+      <li>Previous: <a href="data.html" title="previous chapter">data package</a></li>
+      <li>Next: <a href="lca_app.html" title="next chapter">lca_app package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Tong Yin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/database.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
