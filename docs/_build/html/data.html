@@ -1,0 +1,325 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>data package &#8212; LCA_Project 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="database package" href="database.html" />
+    <link rel="prev" title="application module" href="application.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="data-package">
+<h1>data package<a class="headerlink" href="#data-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-data.data_process_helper">
+<span id="data-data-process-helper-module"></span><h2>data.data_process_helper module<a class="headerlink" href="#module-data.data_process_helper" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="data.data_process_helper.add_binary">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">add_binary</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.add_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that converts certain multi-level categorical attributes to binary indicators</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame that contains created binary indicators</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.additional_processing">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">additional_processing</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.additional_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that filters only the information we want and
+removes irrelevant attributes or observations after further EDA
+and factorizes certain attributes</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.balance_class">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">balance_class</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.balance_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that balances CASE_STATUS_CODE.</p>
+<p>The response variable CASE_STATUS_CODE is imbalanced with TRUE:FALSE roughly equal to 7:1.
+This function down-samples the majority class by randomly removing observations
+from the majority class to prevent its signal from dominating the learning algorithm.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame</dd>
+<dt>Returns:</dt>
+<dd>df_downsampled (pandas.DataFrame object): downsampled data frame</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.convert_types">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">convert_types</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.convert_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that converts attribute types.</p>
+<p>This function converts certain attributes to actionable or correct types that can be used
+in future model development.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame with all irrelevant predictors removed</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame with converted predictors</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.drop_false_predictor">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">drop_false_predictor</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.drop_false_predictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that drops false predictors.</p>
+<p>This function drops attributes with unique values such as Case_Number,
+Employer_Address, Employer_Phone and Employer_Phone_Ext, Agent_Attorney_Name,
+which are are unnecessary attributes in predicting the Case_Status.
+This is because attributes with unique values such as ID can build a model
+that would be based on that attribute with unique value and predict with maximum accuracy.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame that holds all data</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame with false predictors removed</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.drop_irrelevant_predictors">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">drop_irrelevant_predictors</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.drop_irrelevant_predictors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that drops other attributes irrelevant for predictive model development.</p>
+<p>This function drops attributes that are not likely to be available to web app users
+(Case_Submitted, Decision_Date, NAICS_Code, PW_Source_Other, PW_Source_Year),
+and attributes not in compliance with regulations after data exploration
+(Employment_Start_Date, Employment_End_Date, since employment time cannot be more than three years
+while more than 90% have a difference more than 3 years for our dataset)</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame with false, repetitive, and sparse predictors removed</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame with other irrelevant predictors further removed</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.drop_repetitive_predictors">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">drop_repetitive_predictors</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.drop_repetitive_predictors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that drops repetitive predictors.</p>
+<p>This function drops attributes providing redundant information.
+Employer_City, Worksite_City, Worksite_County, Employer_Province, Employer_Postal_Code,
+Job_Title, SOC_Code, PW_Unit_Of_Pay, and PW_Wage_Level will be removed.
+Employer_State, Worksite_State, SOC_Name and WAGE_UNIT_OF_PAY will be kept.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame with false predictors removed</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame with repetitive predictors further removed</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.drop_sparse_predictors">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">drop_sparse_predictors</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.drop_sparse_predictors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that drops attributes with more than 50% missing values where there is no imputation possibility.</p>
+<p>This function drops attributes that include more than 50% missing values.
+These attributes are Agent_Attorney_City, Agent_Attorney_State, Original_Cert_Date,
+Employer_Business_DBA, Support_H1B, Labor_Con_Agree, Public_Disclosure_Location.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame with false and repetitive predictors removed</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame with predictors containing
+more than 50% missing values further removed</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper.impute_missing_cat">
+<code class="descclassname">data.data_process_helper.</code><code class="descname">impute_missing_cat</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper.impute_missing_cat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that imputes missing values.</p>
+<p>This function imputes certain categorical attributes with missing values
+using the most common type method. After imputation, the function also removes
+the very small portion of observations with missing values.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame before imputation of missing values</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame with no missing values left</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-data.data_process_helper_unit_test">
+<span id="data-data-process-helper-unit-test-module"></span><h2>data.data_process_helper_unit_test module<a class="headerlink" href="#module-data.data_process_helper_unit_test" title="Permalink to this headline">¶</a></h2>
+<p>This module includes unit tests for two important functions in data_process_helper.py.</p>
+<dl class="function">
+<dt id="data.data_process_helper_unit_test.main">
+<code class="descclassname">data.data_process_helper_unit_test.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper_unit_test.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper_unit_test.test_add_binary">
+<code class="descclassname">data.data_process_helper_unit_test.</code><code class="descname">test_add_binary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper_unit_test.test_add_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing add_binary function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.data_process_helper_unit_test.test_impute_missing_cat">
+<code class="descclassname">data.data_process_helper_unit_test.</code><code class="descname">test_impute_missing_cat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data.data_process_helper_unit_test.test_impute_missing_cat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing impute_missing_cat function.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-data.make_dataframe">
+<span id="data-make-dataframe-module"></span><h2>data.make_dataframe module<a class="headerlink" href="#module-data.make_dataframe" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="data.make_dataframe.make_data_frame">
+<code class="descclassname">data.make_dataframe.</code><code class="descname">make_data_frame</code><span class="sig-paren">(</span><em>input_filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#data.make_dataframe.make_data_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that transforms raw csv data file to cleaned data frame</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>input_filepath (str): csv file that holds original data</dd>
+<dt>Returns:</dt>
+<dd>processed_df (pandas.DataFrame object):
+final cleaned data frame</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.make_dataframe.process_data">
+<code class="descclassname">data.make_dataframe.</code><code class="descname">process_data</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#data.make_dataframe.process_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that processes input raw data into cleaned and processed data frame.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>df (pandas.DataFrame object): data frame that holds raw data</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame that holds processed data</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data.make_dataframe.read_data">
+<code class="descclassname">data.make_dataframe.</code><code class="descname">read_data</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#data.make_dataframe.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that reads in original data.
+This function will read original data into pandas data frame with encoding UTF-8
+while converting certain attributes to avoid parsing issues.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): file path of data, which should be in csv format</dd>
+<dt>Returns:</dt>
+<dd>df (pandas.DataFrame object): data frame that holds all data</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-data">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-data" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LCA_Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">423Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="application.html">application module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">data package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lca_app.html">lca_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prediction.html">prediction package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">423Project</a><ul>
+      <li>Previous: <a href="application.html" title="previous chapter">application module</a></li>
+      <li>Next: <a href="database.html" title="next chapter">database package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Tong Yin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
