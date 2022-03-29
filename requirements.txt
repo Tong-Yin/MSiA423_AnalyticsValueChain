@@ -48,7 +48,7 @@ notebook==5.4.0
 numpy==1.14.0
 pandas==0.22.0
 pandocfilters==1.4.2
-paramiko==2.4.1
+paramiko==2.10.1
 parso==0.1.1
 pathspec==0.5.5
 pexpect==4.3.1
